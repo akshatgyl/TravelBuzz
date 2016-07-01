@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--First View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="TravelBuzz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBD-wA-gmL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5H-v4-q6u" customClass="GMSMapView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google-map-marker" translatesAutoresizingMaskIntoConstraints="NO" id="tUA-Pv-aO9">
+                                        <rect key="frame" x="289" y="281" width="22" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="n2d-fy-KIj"/>
+                                            <constraint firstAttribute="height" constant="39" id="sHv-0c-ITN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJO-jp-07t">
+                                        <rect key="frame" x="30" y="30" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="LUM-xY-dyu"/>
+                                            <constraint firstAttribute="width" constant="35" id="faQ-2v-8fo"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="ghV-v2-Evg"/>
+                                            <constraint firstAttribute="height" constant="35" id="pKC-W2-ET4"/>
+                                        </constraints>
+                                        <state key="normal" title="Back" image="BackButton"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="LUM-xY-dyu"/>
+                                                <exclude reference="ghV-v2-Evg"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="backPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q5K-IG-r8j"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNW-Sy-VKq">
+                                        <rect key="frame" x="247" y="459" width="106" height="30"/>
+                                        <state key="normal" title="Select Location"/>
+                                        <connections>
+                                            <action selector="locationSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jzc-PX-vQu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="a5H-v4-q6u" firstAttribute="leading" secondItem="GBD-wA-gmL" secondAttribute="leading" id="8CE-dk-lVg"/>
+                                    <constraint firstItem="tUA-Pv-aO9" firstAttribute="centerX" secondItem="GBD-wA-gmL" secondAttribute="centerX" id="LBd-zL-x9m"/>
+                                    <constraint firstItem="a5H-v4-q6u" firstAttribute="top" secondItem="GBD-wA-gmL" secondAttribute="top" id="Oho-sa-BGi"/>
+                                    <constraint firstItem="tUA-Pv-aO9" firstAttribute="centerY" secondItem="GBD-wA-gmL" secondAttribute="centerY" id="Oxn-tY-1PA"/>
+                                    <constraint firstItem="tUA-Pv-aO9" firstAttribute="centerX" secondItem="GBD-wA-gmL" secondAttribute="centerX" id="Ttb-vU-vIj"/>
+                                    <constraint firstAttribute="trailing" secondItem="a5H-v4-q6u" secondAttribute="trailing" constant="280" id="c5i-Zk-GEi"/>
+                                    <constraint firstItem="NJO-jp-07t" firstAttribute="top" secondItem="GBD-wA-gmL" secondAttribute="top" constant="30" id="cfl-S2-shl"/>
+                                    <constraint firstItem="tUA-Pv-aO9" firstAttribute="centerY" secondItem="GBD-wA-gmL" secondAttribute="centerY" id="gyO-MD-FuW"/>
+                                    <constraint firstItem="PNW-Sy-VKq" firstAttribute="centerX" secondItem="GBD-wA-gmL" secondAttribute="centerX" id="hBH-rY-4Ht"/>
+                                    <constraint firstItem="NJO-jp-07t" firstAttribute="leading" secondItem="GBD-wA-gmL" secondAttribute="leading" constant="30" id="jzJ-KU-wXQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="a5H-v4-q6u" secondAttribute="trailing" id="kXG-NN-dqy"/>
+                                    <constraint firstItem="PNW-Sy-VKq" firstAttribute="centerY" secondItem="GBD-wA-gmL" secondAttribute="centerY" constant="174" id="n81-ZM-qce"/>
+                                    <constraint firstAttribute="bottom" secondItem="a5H-v4-q6u" secondAttribute="bottom" id="uuG-Kv-6Bo"/>
+                                    <constraint firstItem="tUA-Pv-aO9" firstAttribute="centerY" secondItem="GBD-wA-gmL" secondAttribute="centerY" id="vR9-M0-6CI"/>
+                                    <constraint firstItem="tUA-Pv-aO9" firstAttribute="centerX" secondItem="GBD-wA-gmL" secondAttribute="centerX" id="z8A-pA-DW2"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="c5i-Zk-GEi"/>
+                                        <exclude reference="Oxn-tY-1PA"/>
+                                        <exclude reference="Ttb-vU-vIj"/>
+                                        <exclude reference="vR9-M0-6CI"/>
+                                        <exclude reference="z8A-pA-DW2"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezx-sz-SXa">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfM-Uz-MIR">
+                                <rect key="frame" x="195" y="285" width="210" height="30"/>
+                                <state key="normal" title="SELECT LOCATION USING PIN"/>
+                                <connections>
+                                    <action selector="pinButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="91M-q7-cy7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lP-QH-UhR">
+                                <rect key="frame" x="219" y="198" width="162" height="30"/>
+                                <state key="normal" title="ADD YOUR NEXT STOP"/>
+                                <connections>
+                                    <action selector="searchWithAdress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZHG-Ur-sdx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ezx-sz-SXa" secondAttribute="trailing" id="5Cw-Wc-z0c"/>
+                            <constraint firstItem="hfM-Uz-MIR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="67b-rT-HHf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GBD-wA-gmL" secondAttribute="bottom" id="71p-OR-RFi"/>
+                            <constraint firstItem="GBD-wA-gmL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="IxC-e9-sX9"/>
+                            <constraint firstItem="7lP-QH-UhR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-87" id="Qug-tn-Q4a"/>
+                            <constraint firstItem="7lP-QH-UhR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dd0-hK-eqn"/>
+                            <constraint firstItem="ezx-sz-SXa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fdG-Gm-slE"/>
+                            <constraint firstAttribute="trailing" secondItem="GBD-wA-gmL" secondAttribute="trailing" id="hb6-C7-2Zh"/>
+                            <constraint firstItem="hfM-Uz-MIR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oS4-lj-Eo0"/>
+                            <constraint firstItem="ezx-sz-SXa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="on1-hQ-rtL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ezx-sz-SXa" secondAttribute="bottom" id="qKG-ZH-vgM"/>
+                            <constraint firstItem="GBD-wA-gmL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qWb-3U-pkA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6xD-ih-Ecj"/>
+                    <connections>
+                        <outlet property="addButton" destination="7lP-QH-UhR" id="JVS-HV-eYn"/>
+                        <outlet property="backButton" destination="NJO-jp-07t" id="BpM-2K-Hm9"/>
+                        <outlet property="googleMap" destination="a5H-v4-q6u" id="Vlt-PL-6U8"/>
+                        <outlet property="locationButton" destination="PNW-Sy-VKq" id="9iO-Gd-uAr"/>
+                        <outlet property="mapView" destination="GBD-wA-gmL" id="iQW-hb-rjL"/>
+                        <outlet property="opaqueView" destination="ezx-sz-SXa" id="lRr-Yo-CiP"/>
+                        <outlet property="pin" destination="tUA-Pv-aO9" id="U8k-Ch-OIo"/>
+                        <outlet property="pinButton" destination="hfM-Uz-MIR" id="V6H-04-xao"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1253" y="433"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BackButton" width="1024" height="1024"/>
+        <image name="google-map-marker" width="372" height="594"/>
+    </resources>
+</document>
