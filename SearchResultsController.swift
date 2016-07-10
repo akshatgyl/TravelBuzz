@@ -53,21 +53,19 @@ class SearchResultsController: UITableViewController {
     
     override func tableView(tableView: UITableView,
                             didSelectRowAtIndexPath indexPath: NSIndexPath){
-        // 1
         self.dismissViewControllerAnimated(true, completion: nil)
-        // 2
+        
         let correctedAddress:String! = self.searchResults[indexPath.row].stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.symbolCharacterSet())
         let url = NSURL(string: "https://maps.googleapis.com/maps/api/geocode/json?address=\(correctedAddress)&sensor=false")
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) { (data, response, error) -> Void in
-            // 3
             do {
                 if data != nil{
                     let dic = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves) as! NSDictionary
                     
                     let lat = dic["results"]?.valueForKey("geometry")?.valueForKey("location")?.valueForKey("lat")?.objectAtIndex(0) as! Double
                     let lon = dic["results"]?.valueForKey("geometry")?.valueForKey("location")?.valueForKey("lng")?.objectAtIndex(0) as! Double
-                    // 4
+                    
                     self.delegate.locateWithLongitude(lon, andLatitude: lat, andTitle: self.searchResults[indexPath.row])
                 }
                 
@@ -75,7 +73,6 @@ class SearchResultsController: UITableViewController {
                 print("Error")
             }
         }
-        // 5
         task.resume()
     }
     

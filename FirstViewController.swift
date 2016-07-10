@@ -450,7 +450,7 @@ extension FirstViewController: CLLocationManagerDelegate {
     func createAlert() {
         notificationCreated = true
         
-        let alert = UIAlertController(title: "Destination Reached", message: "You have now arrived your location!", preferredStyle: .ActionSheet)
+        let alert = UIAlertController(title: "Destination Reached", message: "You are now arriving your location!", preferredStyle: .ActionSheet)
         
         let dismissAction = UIAlertAction(title: "Dismiss", style: .Destructive) { (UIAlertAction) in
             self.notificationCreated = false
