@@ -21,6 +21,7 @@ During  all notifications and updates, phone vibrates and sounds untill dismisse
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
+*NOTE* All files not uploaded in this repository due to size limit issues.
 
 ## License
 
