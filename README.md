@@ -3,6 +3,7 @@
 - [x] Type your stop (Result suggestions based on location)
 - [x] Drop Pin at the destination
 - [x] Recent searches that can be deleted (swipe on the cell)
+- [x] After setting location, zoom level changes so as to show both, destination and current location, on the map
 - [ ] Distance from destination can be adjusted for the app to notify you
 
 ## Video Walkthrough 
