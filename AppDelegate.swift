@@ -8,18 +8,37 @@
 
 import UIKit
 import CoreData
+import AVFoundation
+
+
+var notificationTurnedOff = false
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
     let googleMapsApiKey = "AIzaSyCME4LM7YmVlXqSpKNI95qCCKDTwTxshAw"
-
-
+    
+    lazy var locationManager: CLLocationManager! = {
+        let manager = CLLocationManager()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.pausesLocationUpdatesAutomatically = false
+        manager.delegate = self
+        manager.allowsBackgroundLocationUpdates = true
+        manager.requestAlwaysAuthorization()
+        return manager
+    }()
+    
+    var notificationCreated = false
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         GMSServices.provideAPIKey(googleMapsApiKey)
+        
+        let settings = UIUserNotificationSettings(forTypes: [.Alert], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        locationManager.startUpdatingLocation()
         return true
     }
 
@@ -33,6 +52,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let target = targetPostion {
+            let myLocation = manager.location
+            let target = CLLocation(latitude: target.latitude , longitude: target.longitude)
+            let distance: CLLocationDistance = (myLocation?.distanceFromLocation(target))!
+            print(distance)
+
+            
+            if distance < 50 && !notificationTurnedOff {
+                if !notificationCreated {
+                    createNotification()
+                    player.play()
+                }
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
+        }
+    }
+    
+    func createNotification() {
+        
+        notificationCreated = true
+        
+        let dismissAction = UIMutableUserNotificationAction()
+        dismissAction.identifier = "DISMISS_ACTION"
+        dismissAction.title = "Dismiss"
+        dismissAction.activationMode = UIUserNotificationActivationMode.Background
+        dismissAction.authenticationRequired = false
+        dismissAction.destructive = false
+        
+        let dismissCategory = UIMutableUserNotificationCategory()
+        dismissCategory.identifier = "DISMISS_CATEGORY"
+        dismissCategory.setActions([dismissAction],
+        forContext: UIUserNotificationActionContext.Default)
+        dismissCategory.setActions([dismissAction],
+        forContext: UIUserNotificationActionContext.Minimal)
+        
+        let types = UIUserNotificationType.Alert
+        let settings = UIUserNotificationSettings(forTypes: types, categories: NSSet(object: dismissCategory) as? Set<UIUserNotificationCategory>)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        
+        let notification = UILocalNotification()
+        notification.alertBody = "You are now arriving your destination!"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.category = "DISMISS_CATEGORY"
+        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        if identifier! == "DISMISS_ACTION" {
+            targetPostion = nil
+            notificationCreated = false
+            notificationTurnedOff = true
+            player.stop()
+        }
+    }
+    
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
@@ -45,6 +121,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+        
+        if savedLocations.count != 0 {
+            print(savedArray)
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            userDefaults.setValue(savedLocations, forKey: "savedLocations")
+            userDefaults.setValue(savedArray, forKey: "savedArray")
+            userDefaults.synchronize()
+        }
+        
     }
 
     // MARK: - Core Data stack

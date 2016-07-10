@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,15 +13,48 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PokeWake" translatesAutoresizingMaskIntoConstraints="NO" id="OcV-GE-HmI">
+                                <rect key="frame" x="8" y="-5" width="304" height="182"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="9UO-IG-Z1y"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="QYX-3H-tdA">
+                                <rect key="frame" x="30" y="154" width="260" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="CHt-13-mM3"/>
+                                    <constraint firstAttribute="height" constant="260" id="mh5-Rc-zgy"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OcV-GE-HmI" secondAttribute="trailing" constant="8" id="Klj-JH-nke"/>
+                            <constraint firstItem="QYX-3H-tdA" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Nsa-nB-vWv"/>
+                            <constraint firstItem="OcV-GE-HmI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Uwt-eZ-Llm"/>
+                            <constraint firstItem="OcV-GE-HmI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="8" id="hJj-1O-lDa"/>
+                            <constraint firstItem="OcV-GE-HmI" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-5" id="npT-DG-B0Q"/>
+                            <constraint firstItem="QYX-3H-tdA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sJc-Fi-8Rt"/>
+                            <constraint firstItem="OcV-GE-HmI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yUb-kf-JL4"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Uwt-eZ-Llm"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PokeWake" width="513" height="72"/>
+        <image name="logo.png" width="525" height="525"/>
+    </resources>
 </document>
