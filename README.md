@@ -1,20 +1,26 @@
-*TravelBuzz*
-
 **PokeWake** notifies you when approaching a certain destination so you can focus on taking that 10 minutes nap or do whatever you want with a free mind!
 
 - [x] Type your stop (Result suggestions based on location)
 - [x] Drop Pin at the destination
 - [x] Recent searches that can be deleted (swipe on the cell)
+- [x] After setting location, zoom level changes so as to show both, destination and current location, on the map
 - [ ] Distance from destination can be adjusted for the app to notify you
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/akshatgyl/PeekShare/blob/master/PeekShare/Assets.xcassets/peekshareDemo.dataset/peekshareDemo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/akshatgyl/TravelBuzz/blob/master/PokeWake%20-%20Setting%20location.gif' title='Setting Location' width='' alt='Video Walkthrough' />
+
+<img src='https://github.com/akshatgyl/TravelBuzz/blob/master/PokeWake%20-%20Recieving%20Update.gif' title='Recieving Updated' width='' alt='Video Walkthrough' />
+
+<img src='https://github.com/akshatgyl/TravelBuzz/blob/master/PokeWake%20-%20Recieving%20Notifications.gif' title='Recieving Notifications' width='' alt='Video Walkthrough' />
+
+During  all notifications and updates, phone vibrates and sounds untill dismissed is pressed.
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
+*NOTE* All files not uploaded in this repository due to size limit issues.
 
 ## License
 
