@@ -12,9 +12,9 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://github.com/akshatgyl/TravelBuzz/blob/master/PokeWake%20-%20Setting%20location.gif' title='Setting Location' width='' alt='Video Walkthrough' />
 
-<img src='https://github.com/akshatgyl/TravelBuzz/blob/master/PokeWake%20-%20Recieving%20Update.gif' title='Recieving Updated' width='' alt='Video Walkthrough' />
+<img src='https://github.com/akshatgyl/TravelBuzz/blob/master/PokeWake%20-%20Receiving%20Update.gif' title='Recieving Updated' width='' alt='Video Walkthrough' />
 
-<img src='https://github.com/akshatgyl/TravelBuzz/blob/master/PokeWake%20-%20Recieving%20Notifications.gif' title='Recieving Notifications' width='' alt='Video Walkthrough' />
+<img src='https://github.com/akshatgyl/TravelBuzz/blob/master/PokeWake%20-%20Receiving%20Notification.gif' title='Recieving Notifications' width='' alt='Video Walkthrough' />
 
 During  all notifications and updates, phone vibrates and sounds untill dismissed is pressed.
 
