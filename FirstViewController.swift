@@ -213,7 +213,7 @@ class FirstViewController: UIViewController, UISearchBarDelegate, LocateOnTheMap
             self.pin.alpha = 0
             self.backButton.alpha = 0
             self.recentButton.alpha = 1
-            
+            self.locationButton.alpha = 0
 //            self.opaqueView.hidden = false
 //            self.addButton.hidden = false
 //            self.pinButton.hidden = false
