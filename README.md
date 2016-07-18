@@ -5,6 +5,7 @@
 - [x] Recent searches that can be deleted (swipe on the cell)
 - [x] After setting location, zoom level changes so as to show both, destination and current location, on the map
 - [ ] Distance from destination can be adjusted for the app to notify you
+- [ ] Using ETA information to predict arrival times when phone does not have a reception (Subways).
 
 ## Video Walkthrough 
 
